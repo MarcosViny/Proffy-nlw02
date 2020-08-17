@@ -22,7 +22,7 @@ Project designed to connect teachers and students, made at Next Level Week #02 @
 $ git clone https://github.com/MarcosViny/Proffy-nlw02
 
 # Access the project folder at the command prompt
-$ cd nlw02-Proffy
+$ cd Proffy-nlw02
 
 # Install the dependencies
 $ npm install
