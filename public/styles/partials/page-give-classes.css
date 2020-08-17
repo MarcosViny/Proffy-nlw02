@@ -132,8 +132,25 @@
 
     .schedule-item {
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr 40px;
         column-gap: 1.6rem;
+    }
+
+    .schedule-item .divBtn {
+
+        width: 40px;
+        height: 40px;
+        
+        align-self: flex-end;
+
+        margin-bottom: 0.7rem;
+
+        transition: all ease .2s;
+
+    }
+
+    .schedule-item .divBtn:hover {
+        transform: scale(1.2);
     }
 
     #page-give-classes #schedule-items .select-block+.input-block,
@@ -153,5 +170,19 @@
         margin-top: 0;
 
         width: 200px;
+    }
+}
+
+@media (max-width: 699px) {
+        
+    .schedule-item .divBtn {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+       
+    .schedule-item .btnRemove {
+        width: 40px;
+        height: 40px;           
     }
 }

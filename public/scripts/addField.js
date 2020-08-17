@@ -1,28 +1,28 @@
 document.querySelector('#add-time')
-    .addEventListener('click', verifica)
+    .addEventListener('click', cloneField)
 
-function verifica() {
-    const scheduleItem = document.querySelector('.schedule-item')
 
-    const items = scheduleItem.querySelectorAll('input')
+function cloneField() {
+    const divBtn = document.createElement('div')
+    const btnRemove = document.createElement('img')
+    const newFieldContainer = document.querySelector('.schedule-item').cloneNode(true)
 
-    items.forEach((item) => {
-        if (item.value != '') {
-            cloneField()
-        }
+    divBtn.setAttribute('class', 'divBtn')
+    btnRemove.setAttribute('class', 'btnRemove')
+    btnRemove.setAttribute('src', '/images/icons/remove-icon.svg')
+
+
+    const fields = newFieldContainer.querySelectorAll('input')
+    fields.forEach((field) => {
+        field.value = ''
     })
-}
 
-    function cloneField () {
-        
-        const newFieldContainer = document.querySelector('.schedule-item').cloneNode(true)
+    document.querySelector('#schedule-items').appendChild(newFieldContainer)
+    divBtn.appendChild(btnRemove)
+    newFieldContainer.appendChild(divBtn)
 
-        const fields = newFieldContainer.querySelectorAll('input')
-        fields.forEach((field) => {
-            field.value = ''
-        })
 
-        document.querySelector('#schedule-items').appendChild(newFieldContainer)
+    btnRemove.onclick = () => {
+        newFieldContainer.remove()
     }
-
-    
+}
